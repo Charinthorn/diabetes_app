@@ -141,7 +141,7 @@ class CircularPercentIndicatorWithListView extends StatelessWidget {
         (totalCarbs / maxCarbs).clamp(0.0, 1.0); // คำนวณค่าเปอร์เซ็นต์
 
     return Column(
-      mainAxisAlignment: MainAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         Container(
           padding: const EdgeInsets.only(top: 15.0, right: 200),
@@ -194,8 +194,22 @@ class CircularPercentIndicatorWithListView extends StatelessWidget {
             children: <Widget>[
               ListTile(
                 leading: const Icon(Icons.free_breakfast),
-                title: const Text('มื้อเช้า : '),
-                trailing: Text("Carbs : $breakfastCarbs"),
+                title: const Text(
+                  'มื้อเช้า : ',
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: Color.fromARGB(
+                        255, 0, 0, 0), // ปรับเปลี่ยนสีตัวอักษรที่นี่
+                  ),
+                ),
+                trailing: Text(
+                  "Carbs : $breakfastCarbs",
+                  style: const TextStyle(
+                    fontSize: 20,
+                    color: Color.fromARGB(
+                        255, 33, 54, 243), // ปรับเปลี่ยนสีตัวอักษรที่นี่
+                  ),
+                ),
                 titleTextStyle: const TextStyle(fontSize: 23),
                 leadingAndTrailingTextStyle: const TextStyle(fontSize: 16),
               ),
@@ -205,8 +219,22 @@ class CircularPercentIndicatorWithListView extends StatelessWidget {
               ),
               ListTile(
                 leading: const Icon(Icons.wb_sunny),
-                title: const Text('มื้อเที่ยง : '),
-                trailing: Text("Carbs : $lunchCarbs"),
+                title: const Text(
+                  'มื้อเที่ยง : ',
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: Color.fromARGB(
+                        255, 0, 0, 0), // ปรับเปลี่ยนสีตัวอักษรที่นี่
+                  ),
+                ),
+                trailing: Text(
+                  "Carbs : $lunchCarbs",
+                  style: const TextStyle(
+                    fontSize: 20,
+                    color: Color.fromARGB(
+                        255, 33, 54, 243), // ปรับเปลี่ยนสีตัวอักษรที่นี่
+                  ),
+                ),
                 titleTextStyle: const TextStyle(fontSize: 23),
                 leadingAndTrailingTextStyle: const TextStyle(fontSize: 16),
               ),
@@ -216,8 +244,22 @@ class CircularPercentIndicatorWithListView extends StatelessWidget {
               ),
               ListTile(
                 leading: const Icon(Icons.cloud),
-                title: const Text('มื้อเย็น : '),
-                trailing: Text("Carbs : $dinnerCarbs"),
+                title: const Text(
+                  'มื้อเย็น : ',
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: Color.fromARGB(
+                        255, 0, 0, 0), // ปรับเปลี่ยนสีตัวอักษรที่นี่
+                  ),
+                ),
+                trailing: Text(
+                  "Carbs : $dinnerCarbs",
+                  style: const TextStyle(
+                    fontSize: 20,
+                    color: Color.fromARGB(
+                        255, 33, 54, 243), // ปรับเปลี่ยนสีตัวอักษรที่นี่
+                  ),
+                ),
                 titleTextStyle: const TextStyle(fontSize: 23),
                 leadingAndTrailingTextStyle: const TextStyle(fontSize: 16),
               ),
@@ -227,8 +269,22 @@ class CircularPercentIndicatorWithListView extends StatelessWidget {
               ),
               ListTile(
                 leading: const Icon(Icons.bakery_dining_rounded),
-                title: const Text('อาหารว่าง : '),
-                trailing: Text("Carbs : $snackCarbs"),
+                title: const Text(
+                  'อาหารว่าง : ',
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: Color.fromARGB(
+                        255, 0, 0, 0), // ปรับเปลี่ยนสีตัวอักษรที่นี่
+                  ),
+                ),
+                trailing: Text(
+                  "Carbs : $snackCarbs",
+                  style: const TextStyle(
+                    fontSize: 20,
+                    color: Color.fromARGB(
+                        255, 33, 54, 243), // ปรับเปลี่ยนสีตัวอักษรที่นี่
+                  ),
+                ),
                 titleTextStyle: const TextStyle(fontSize: 23),
                 leadingAndTrailingTextStyle: const TextStyle(fontSize: 16),
               ),

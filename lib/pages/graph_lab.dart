@@ -59,8 +59,11 @@ class _MyAppState extends State<Graph> {
             Container(
               padding: const EdgeInsets.only(left: 380),
               child: const Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  SizedBox(
+                    height: 50,
+                  ),
                   Row(
                     children: [
                       Icon(Icons.square,
@@ -92,18 +95,27 @@ class _MyAppState extends State<Graph> {
             ),
             Container(
               padding: EdgeInsets.only(right: 300),
-              child: ElevatedButton.icon(
-                style: ButtonStyle(
-                    backgroundColor: MaterialStatePropertyAll(
-                        const Color.fromARGB(255, 2, 66, 119))),
-                onPressed: () {},
-                icon: Icon(Icons.print,
-                    color: Color.fromARGB(
-                        255, 255, 255, 255)), //icon data for elevated button
-                label: Text("PRINT",
-                    style:
-                        TextStyle(color: Color.fromARGB(255, 255, 255, 255))),
-                //label text
+              child: SizedBox(
+                width: 500, // กำหนดความกว้างของปุ่ม
+                height: 50, // กำหนดความสูงของปุ่ม
+                child: ElevatedButton.icon(
+                  style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all(
+                      Color.fromARGB(255, 2, 66, 119),
+                    ),
+                  ),
+                  onPressed: () {},
+                  icon: Icon(
+                    Icons.print,
+                    color: Color.fromARGB(255, 255, 255, 255),
+                  ),
+                  label: Text(
+                    "PRINT",
+                    style: TextStyle(
+                      color: Color.fromARGB(255, 255, 255, 255),
+                    ),
+                  ),
+                ),
               ),
             )
           ]),
@@ -173,13 +185,13 @@ class LineChartSample extends StatelessWidget {
         lineBarsData: [
           LineChartBarData(
             spots: [
-               FlSpot(0, 3),
-               FlSpot(1, 1),
-               FlSpot(2, 4),
-               FlSpot(3, 2),
-               FlSpot(4, 5),
-               FlSpot(5, 3),
-               FlSpot(6, 4),
+              FlSpot(0, 3),
+              FlSpot(1, 1),
+              FlSpot(2, 4),
+              FlSpot(3, 2),
+              FlSpot(4, 5),
+              FlSpot(5, 3),
+              FlSpot(6, 4),
             ],
 
             colors: [const Color.fromARGB(255, 97, 131, 216)], //สีเส้นกราฟ
@@ -190,13 +202,13 @@ class LineChartSample extends StatelessWidget {
           ),
           LineChartBarData(
             spots: [
-               FlSpot(0, 6),
-               FlSpot(1, 5),
-               FlSpot(2, 2),
-               FlSpot(3, 3),
-               FlSpot(4, 4),
-               FlSpot(5, 4),
-               FlSpot(6, 5),
+              FlSpot(0, 6),
+              FlSpot(1, 5),
+              FlSpot(2, 2),
+              FlSpot(3, 3),
+              FlSpot(4, 4),
+              FlSpot(5, 4),
+              FlSpot(6, 5),
             ],
 
             colors: [const Color.fromARGB(255, 223, 87, 87)], //สีเส้นกราฟ
