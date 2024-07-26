@@ -39,11 +39,11 @@ class _MyAppState extends State<Graph_food> with TickerProviderStateMixin {
         body: Container(
           child: Column(children: <Widget>[
             Container(
-              padding: const EdgeInsets.only(top: 25, right: 130),
+              padding: const EdgeInsets.only(top: 25, right: 40),
               child:
-                  const Text('กราฟแสดงข้อมูลการรับประทาน Carbs 14 วันที่ผ่านมา',
+                  const Text('กราฟแสดงข้อมูลการรับประทานCarbs 14 วันที่ผ่านมา',
                       style: TextStyle(
-                        fontSize: 15,
+                        fontSize: 14,
                         color: Color.fromARGB(255, 2, 66, 119),
                         fontWeight: FontWeight.bold,
                       ),
@@ -54,8 +54,8 @@ class _MyAppState extends State<Graph_food> with TickerProviderStateMixin {
             ),
             Container(
               padding: const EdgeInsets.only(right: 30),
-              width: 500, // กำหนดความกว้างของกราฟ
-              height: 200, // กำหนดความสูงของกราฟ
+              width: 800, // กำหนดความกว้างของกราฟ
+              height: 250, // กำหนดความสูงของกราฟ
               child: LineChartSample1(),
             ),
             const Divider(
@@ -65,11 +65,11 @@ class _MyAppState extends State<Graph_food> with TickerProviderStateMixin {
               color: Colors.transparent,
             ),
             Container(
-              padding: const EdgeInsets.only(top: 25, right: 90),
+              padding: const EdgeInsets.only(top: 25),
               child: const Text(
-                  'กราฟแสดงข้อมูลเฉลี่ยการรับประทาน Carbs 1 เดือนที่ผ่านมา',
+                  'กราฟแสดงข้อมูลเฉลี่ยการรับประทานCarbs 1 เดือนที่ผ่านมา',
                   style: TextStyle(
-                    fontSize: 15,
+                    fontSize: 14,
                     color: Color.fromARGB(255, 2, 66, 119),
                     fontWeight: FontWeight.bold,
                   ),
@@ -80,8 +80,8 @@ class _MyAppState extends State<Graph_food> with TickerProviderStateMixin {
             ),
             Container(
               padding: const EdgeInsets.only(right: 30),
-              width: 500, // กำหนดความกว้างของกราฟ
-              height: 200, // กำหนดความสูงของกราฟ
+              width: 1000, // กำหนดความกว้างของกราฟ
+              height: 250, // กำหนดความสูงของกราฟ
               child: LineChartSample2(),
             ),
           ]),
@@ -151,21 +151,21 @@ class LineChartSample1 extends StatelessWidget {
         lineBarsData: [
           LineChartBarData(
             spots: [
-               FlSpot(0, 3),
-               FlSpot(1, 1),
-               FlSpot(2, 4),
-               FlSpot(3, 2),
-               FlSpot(4, 5),
-               FlSpot(5, 3),
-               FlSpot(6, 4),
-               FlSpot(7, 6),
-               FlSpot(8, 3),
-               FlSpot(9, 1),
-               FlSpot(10, 4),
-               FlSpot(11, 3),
-               FlSpot(12, 4),
-               FlSpot(13, 2),
-               FlSpot(14, 5),
+              FlSpot(0, 3),
+              FlSpot(1, 1),
+              FlSpot(2, 4),
+              FlSpot(3, 2),
+              FlSpot(4, 5),
+              FlSpot(5, 3),
+              FlSpot(6, 4),
+              FlSpot(7, 6),
+              FlSpot(8, 3),
+              FlSpot(9, 1),
+              FlSpot(10, 4),
+              FlSpot(11, 3),
+              FlSpot(12, 4),
+              FlSpot(13, 2),
+              FlSpot(14, 5),
             ],
 
             colors: [const Color.fromARGB(255, 97, 131, 216)], //สีเส้นกราฟ
@@ -205,7 +205,7 @@ class LineChartSample2 extends StatelessWidget {
           ),
         ), //เส้นกรอบ
         minX: 0,
-        maxX: 30,
+        maxX: 4,
         minY: 0,
         maxY: 10,
         lineBarsData: [
@@ -216,32 +216,6 @@ class LineChartSample2 extends StatelessWidget {
               FlSpot(2, 4),
               FlSpot(3, 2),
               FlSpot(4, 5),
-              FlSpot(5, 3),
-              FlSpot(6, 4),
-              FlSpot(7, 3),
-              FlSpot(8, 1),
-              FlSpot(9, 4),
-              FlSpot(10, 2),
-              FlSpot(11, 5),
-              FlSpot(12, 3),
-              FlSpot(13, 4),
-              FlSpot(14, 3),
-              FlSpot(15, 1),
-              FlSpot(16, 4),
-              FlSpot(17, 2),
-              FlSpot(18, 5),
-              FlSpot(19, 3),
-              FlSpot(20, 4),
-              FlSpot(21, 3),
-              FlSpot(22, 4),
-              FlSpot(23, 2),
-              FlSpot(24, 5),
-              FlSpot(25, 3),
-              FlSpot(26, 4),
-              FlSpot(27, 3),
-              FlSpot(28, 1),
-              FlSpot(29, 5),
-              FlSpot(30, 3)
             ],
 
             colors: [const Color.fromARGB(255, 97, 131, 216)], //สีเส้นกราฟ

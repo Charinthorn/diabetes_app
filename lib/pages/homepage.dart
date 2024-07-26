@@ -109,13 +109,13 @@ class _GridViewPageState extends State<GridViewPage>
 
       body: Padding(
         padding: const EdgeInsets.symmetric(
-            vertical: 30, horizontal: 1), //แนวตั้งนอนก่อนปุ่ม
+            vertical: 30, horizontal: 7), //แนวตั้งนอนก่อนปุ่ม
         child: AnimationLimiter(
             child: GridView.builder(
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  crossAxisSpacing: 30, // ช่องว่างระหว่างคอลัมน์
-                  mainAxisSpacing: 100, // ช่องว่างระหว่างแถว
+                  crossAxisCount: 1,
+                  crossAxisSpacing: 10, // ช่องว่างระหว่างคอลัมน์
+                  mainAxisSpacing: 10, // ช่องว่างระหว่างแถว
                 ),
                 itemCount: _list.length,
                 itemBuilder: (BuildContext context, int index) {
@@ -178,24 +178,24 @@ class _GridViewPageState extends State<GridViewPage>
 
 Widget listItem(Category category) {
   return Card(
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
-            width: 500,
-            height: 100,
+            width: 1000,
+            height: 250,
             padding: const EdgeInsets.all(2),
             child: Image.asset(category.image), //ขนาดรูป
           ),
           const SizedBox(
-            height: 20,
+            height: 10,
           ),
           Text(
             category.name,
             textAlign: TextAlign.center,
-            style: const TextStyle(fontSize: 15),
+            style: const TextStyle(fontSize: 28),
           )
         ],
       ));
