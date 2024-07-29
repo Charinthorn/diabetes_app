@@ -154,7 +154,7 @@ class _GridViewPageState extends State<GridViewPage>
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => const AlarmScreen(),
+                                  builder: (context) =>  AlarmScreen(),
                                 ),
                               );
                             }

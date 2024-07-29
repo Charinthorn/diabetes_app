@@ -47,7 +47,7 @@ class _MyAppState extends State<Graph> {
         body: Container(
           child: Column(children: <Widget>[
             Container(
-              padding: const EdgeInsets.only(top: 25, right: 130),
+              padding: const EdgeInsets.only(top: 25, right: 40, left: 10),
               child: const Text('กราฟแสดงข้อมูลจากใบผลตรวจ',
                   style: TextStyle(
                     fontSize: 25,
@@ -56,34 +56,43 @@ class _MyAppState extends State<Graph> {
                   ),
                   textAlign: TextAlign.start),
             ),
+            SizedBox(height: 15),
             Container(
-              padding: const EdgeInsets.only(left: 380),
+              padding: const EdgeInsets.only(left: 30),
               child: const Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(
-                    height: 50,
-                  ),
                   Row(
                     children: [
-                      Icon(Icons.square,
-                          color: Color.fromARGB(255, 97, 131, 216)),
+                      Icon(
+                        Icons.square,
+                        color: Color.fromARGB(255, 97, 131, 216),
+                      ),
+                      SizedBox(
+                          width:
+                              8), // Add some space between the icon and the text
                       Text("ค่าน้ำตาล"),
                     ],
                   ),
                   Row(
                     children: [
-                      Icon(Icons.square,
-                          color: Color.fromARGB(255, 223, 87, 87)),
+                      Icon(
+                        Icons.square,
+                        color: Color.fromARGB(255, 223, 87, 87),
+                      ),
+                      SizedBox(
+                          width:
+                              8), // Add some space between the icon and the text
                       Text("ค่าLDL"),
                     ],
                   ),
                 ],
               ),
             ),
+            SizedBox(height: 15),
             Container(
               padding: const EdgeInsets.only(right: 30),
-              width: 500, // กำหนดความกว้างของกราฟ
+              width: 400, // กำหนดความกว้างของกราฟ
               height: 350, // กำหนดความสูงของกราฟ
               child: LineChartSample(),
             ),
@@ -94,9 +103,9 @@ class _MyAppState extends State<Graph> {
               color: Colors.transparent,
             ),
             Container(
-              padding: EdgeInsets.only(right: 300),
+              padding: EdgeInsets.only(right: 280, left: 10),
               child: SizedBox(
-                width: 500, // กำหนดความกว้างของปุ่ม
+                width: 200, // กำหนดความกว้างของปุ่ม
                 height: 50, // กำหนดความสูงของปุ่ม
                 child: ElevatedButton.icon(
                   style: ButtonStyle(

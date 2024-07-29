@@ -144,7 +144,7 @@ class CircularPercentIndicatorWithListView extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         Container(
-          padding: const EdgeInsets.only(top: 15.0, right: 200),
+          padding: const EdgeInsets.only(top: 15, right: 40, left: 10),
           child: const Text(
             "วันนี้ทาน Carbs ไปทั้งหมด...",
             style: TextStyle(fontSize: 25, fontWeight: FontWeight.w700),
