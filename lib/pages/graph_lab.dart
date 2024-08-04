@@ -2,6 +2,8 @@ import 'package:Diabo/pages/homepage.dart';
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
 
+import 'ocr.dart';
+
 class Graph extends StatefulWidget {
   @override
   _MyAppState createState() => _MyAppState();
@@ -136,16 +138,22 @@ class _MyAppState extends State<Graph> {
           padding: const EdgeInsets.only(bottom: 30),
           child: FittedBox(
             child: FloatingActionButton(
-                tooltip: "สแกนใบตรวจ",
-                child: const Icon(
-                  Icons.camera_alt,
-                  size: 30,
-                  color: Color.fromARGB(255, 255, 255, 255),
-                ),
-                backgroundColor: const Color.fromARGB(255, 2, 66, 119),
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(50)), //ความกลมของปุ่ม
-                onPressed: () {}),
+              tooltip: "สแกนใบตรวจ",
+              child: const Icon(
+                Icons.camera_alt,
+                size: 30,
+                color: Color.fromARGB(255, 255, 255, 255),
+              ),
+              backgroundColor: const Color.fromARGB(255, 2, 66, 119),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(50)), //ความกลมของปุ่ม
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const Ocr()),
+                );
+              },
+            ),
           ),
         ),
       ),
