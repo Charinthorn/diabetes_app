@@ -5,8 +5,10 @@ import 'package:google_mlkit_text_recognition/google_mlkit_text_recognition.dart
 import 'package:permission_handler/permission_handler.dart';
 import 'package:image_picker/image_picker.dart';
 
+import 'homepage.dart';
+
 class Ocr extends StatefulWidget {
-  const Ocr({key});
+  const Ocr({Key? key}) : super(key: key);
 
   @override
   State<Ocr> createState() => _MainScreenState();
@@ -14,7 +16,6 @@ class Ocr extends StatefulWidget {
 
 class _MainScreenState extends State<Ocr> with WidgetsBindingObserver {
   bool _isPermissionGranted = false;
-
   late final Future<void> _future;
   CameraController? _cameraController;
 
@@ -25,7 +26,6 @@ class _MainScreenState extends State<Ocr> with WidgetsBindingObserver {
   void initState() {
     super.initState();
     WidgetsBinding.instance.addObserver(this);
-
     _future = _requestCameraPermission();
   }
 
@@ -65,7 +65,6 @@ class _MainScreenState extends State<Ocr> with WidgetsBindingObserver {
                 builder: (context, snapshot) {
                   if (snapshot.hasData) {
                     _initCameraController(snapshot.data!);
-
                     return Center(child: CameraPreview(_cameraController!));
                   } else {
                     return const LinearProgressIndicator();
@@ -74,7 +73,27 @@ class _MainScreenState extends State<Ocr> with WidgetsBindingObserver {
               ),
             Scaffold(
               appBar: AppBar(
-                title: const Text('Text Recognition Sample'),
+                backgroundColor: const Color.fromARGB(255, 11, 60, 101),
+                leading: IconButton(
+                  icon: const Icon(Icons.arrow_back, size: 40),
+                  color: const Color.fromARGB(255, 255, 255, 255),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => GridViewPage()),
+                    );
+                  },
+                ),
+                title: const Text(
+                  'DiaBo',
+                  style: TextStyle(
+                    fontSize: 25,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    height: 3,
+                  ),
+                ),
+                centerTitle: true,
               ),
               backgroundColor: _isPermissionGranted ? Colors.transparent : null,
               body: _isPermissionGranted
@@ -234,8 +253,11 @@ class _MainScreenState extends State<Ocr> with WidgetsBindingObserver {
 
 class ResultScreen extends StatelessWidget {
   final String text;
+  final TextEditingController _textController;
 
-  const ResultScreen({key, required this.text});
+  ResultScreen({Key? key, required this.text})
+      : _textController = TextEditingController(text: text),
+        super(key: key);
 
   @override
   Widget build(BuildContext context) => Scaffold(
@@ -244,7 +266,14 @@ class ResultScreen extends StatelessWidget {
         ),
         body: Container(
           padding: const EdgeInsets.all(30.0),
-          child: Text(text),
+          child: TextField(
+            controller: _textController,
+            maxLines: null,
+            decoration: InputDecoration(
+              border: OutlineInputBorder(),
+              labelText: 'Recognized Text',
+            ),
+          ),
         ),
       );
 }

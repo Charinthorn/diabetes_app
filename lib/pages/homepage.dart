@@ -2,12 +2,12 @@ import 'package:Diabo/main.dart';
 import 'package:Diabo/pages/appointment_doctor.dart';
 import 'package:Diabo/pages/foodpage.dart';
 import 'package:Diabo/pages/graph_lab.dart';
-import 'package:Diabo/pages/medicine_alarm.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:Diabo/data.dart';
 import 'package:Diabo/model/category.dart';
-import 'package:Diabo/pages/login_screen.dart';
+
+
 
 class GridViewPage extends StatefulWidget {
   @override
@@ -150,14 +150,7 @@ class _GridViewPageState extends State<GridViewPage>
                                   builder: (context) => Food(),
                                 ),
                               );
-                            } else {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) =>  AlarmScreen(),
-                                ),
-                              );
-                            }
+                            } 
                           },
                           child: listItem(_list[index]),
                         ),
